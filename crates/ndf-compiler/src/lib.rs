@@ -3,13 +3,17 @@
 pub mod adapters;
 pub mod baseline;
 pub mod dependencies;
+pub mod diagram;
+pub mod diagram_links;
 pub mod diff;
+pub mod edit;
 pub mod export;
 pub mod fix;
 pub mod id_allocator;
 pub mod index;
 pub mod manifest;
 pub mod markdown;
+pub mod project;
 pub mod pto_impact;
 pub mod query;
 pub mod report;

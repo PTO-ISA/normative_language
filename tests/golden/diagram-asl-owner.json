@@ -1,0 +1,808 @@
+{
+  "graph": {
+    "edges": [
+      {
+        "from": "port:node:scope:root:PTO-ARCH-DEPENDENCY:out",
+        "id": "edge:port:node:scope:root:PTO-ARCH-DEPENDENCY:out->port:node:scope:root:PTO-ARCH-OWNER:in:depends-on",
+        "meta": {
+          "label": "depends-on",
+          "role": "depends-on"
+        },
+        "scope": "scope:root",
+        "source": {
+          "file": "<root>/dependency.asl",
+          "line": 1
+        },
+        "to": "port:node:scope:root:PTO-ARCH-OWNER:in"
+      },
+      {
+        "from": "port:node:scope:root:PTO-ARCH-OWNER:out",
+        "id": "edge:port:node:scope:root:PTO-ARCH-OWNER:out->port:node:scope:root:PTO-STATE-ARCH-OWNER:in:owns-state",
+        "meta": {
+          "label": "owns-state",
+          "role": "owns-state"
+        },
+        "scope": "scope:root",
+        "source": {
+          "file": "<root>/owner.asl",
+          "line": 2
+        },
+        "to": "port:node:scope:root:PTO-STATE-ARCH-OWNER:in"
+      },
+      {
+        "from": "port:node:scope:root:PTO-STATE-ARCH-DEPENDENCY:out",
+        "id": "edge:port:node:scope:root:PTO-STATE-ARCH-DEPENDENCY:out->port:node:scope:root:PTO-STATE-ARCH-OWNER:in:depends-on",
+        "meta": {
+          "label": "depends-on",
+          "role": "depends-on"
+        },
+        "scope": "scope:root",
+        "source": {
+          "file": "<root>/dependency.asl",
+          "line": 2
+        },
+        "to": "port:node:scope:root:PTO-STATE-ARCH-OWNER:in"
+      },
+      {
+        "from": "port:node:scope:root:PTO-STATE-ARCH-OWNER:out",
+        "id": "edge:port:node:scope:root:PTO-STATE-ARCH-OWNER:out->port:node:scope:root:PTO-ARCH-OWNER:in:defined-in",
+        "meta": {
+          "label": "defined-in",
+          "role": "defined-in"
+        },
+        "scope": "scope:root",
+        "source": {
+          "file": "<root>/owner.asl",
+          "line": 2
+        },
+        "to": "port:node:scope:root:PTO-ARCH-OWNER:in"
+      }
+    ],
+    "id": "wf:owner",
+    "meta": {
+      "file": "<root>/owner.asl",
+      "project": "pto-spec",
+      "readOnly": true,
+      "title": "owner",
+      "views": [
+        {
+          "id": "refines",
+          "label": "Refinement trace"
+        },
+        {
+          "id": "verifies",
+          "label": "Verification"
+        },
+        {
+          "id": "depends-on",
+          "label": "Dependencies"
+        }
+      ],
+      "workflow": "owner"
+    },
+    "nodes": [
+      {
+        "id": "node:scope:root:PTO-ARCH-OWNER",
+        "kind": "source",
+        "label": "owner.asl",
+        "meta": {
+          "badges": [],
+          "definitionAnnotations": [
+            {
+              "name": "source"
+            },
+            {
+              "arguments": [
+                {
+                  "name": "id",
+                  "value": "PTO-ARCH-OWNER"
+                },
+                {
+                  "name": "domain",
+                  "value": "arch"
+                },
+                {
+                  "name": "status",
+                  "value": "active"
+                },
+                {
+                  "name": "owner",
+                  "value": "pto-spec"
+                },
+                {
+                  "name": "classification",
+                  "value": "test"
+                },
+                {
+                  "name": "pto_entity",
+                  "value": "unit"
+                },
+                {
+                  "name": "surface",
+                  "value": "arch"
+                }
+              ],
+              "name": "ndf"
+            }
+          ],
+          "facts": [
+            {
+              "label": "ID",
+              "value": "ndf://pto-spec/PTO-ARCH-OWNER"
+            },
+            {
+              "label": "Kind",
+              "value": "source"
+            },
+            {
+              "label": "Domain",
+              "value": "arch"
+            },
+            {
+              "label": "Status",
+              "value": "active"
+            },
+            {
+              "label": "Owner",
+              "value": "pto-spec"
+            },
+            {
+              "label": "classification",
+              "value": "test"
+            },
+            {
+              "label": "pto_entity",
+              "value": "unit"
+            },
+            {
+              "label": "surface",
+              "value": "arch"
+            },
+            {
+              "label": "File",
+              "markdown": true,
+              "value": "[`owner.asl`](<root>/owner.asl)"
+            },
+            {
+              "label": "Globals",
+              "markdown": true,
+              "value": "[`_Owner`](<root>/owner.asl#L3)"
+            },
+            {
+              "label": "Trace",
+              "markdown": true,
+              "value": "- owns-state → [PTO-STATE-ARCH-OWNER](#node:scope:root:PTO-STATE-ARCH-OWNER \"<root>/owner.asl#L2\") State Arch Owner\n- ← defined-in [PTO-STATE-ARCH-OWNER](#node:scope:root:PTO-STATE-ARCH-OWNER \"<root>/owner.asl#L2\") State Arch Owner\n- ← depends-on [PTO-ARCH-DEPENDENCY](#node:scope:root:PTO-ARCH-DEPENDENCY \"<root>/dependency.asl#L1\") dependency.asl"
+            }
+          ],
+          "ndf": {
+            "attributes": {
+              "classification": "test",
+              "pto_entity": "unit",
+              "surface": "arch"
+            },
+            "domain": "arch",
+            "id": "ndf://pto-spec/PTO-ARCH-OWNER",
+            "kind": "source",
+            "owner": "pto-spec",
+            "status": "active"
+          },
+          "open": {
+            "file": "<root>/owner.asl"
+          },
+          "source": {
+            "file": "<root>/owner.asl",
+            "line": 1
+          },
+          "views": [
+            {
+              "id": "refines",
+              "label": "Refinement trace"
+            },
+            {
+              "id": "verifies",
+              "label": "Verification"
+            },
+            {
+              "id": "depends-on",
+              "label": "Dependencies"
+            }
+          ]
+        },
+        "ports": [
+          {
+            "direction": "in",
+            "id": "port:node:scope:root:PTO-ARCH-OWNER:in",
+            "name": "in"
+          },
+          {
+            "direction": "out",
+            "id": "port:node:scope:root:PTO-ARCH-OWNER:out",
+            "name": "out"
+          }
+        ],
+        "scope": "scope:root",
+        "type": "PTO-ARCH-OWNER"
+      },
+      {
+        "id": "node:scope:root:PTO-STATE-ARCH-OWNER",
+        "kind": "architecture",
+        "label": "State Arch Owner",
+        "meta": {
+          "badges": [],
+          "definitionAnnotations": [
+            {
+              "name": "architecture"
+            },
+            {
+              "arguments": [
+                {
+                  "name": "id",
+                  "value": "PTO-STATE-ARCH-OWNER"
+                },
+                {
+                  "name": "domain",
+                  "value": "state"
+                },
+                {
+                  "name": "status",
+                  "value": "active"
+                },
+                {
+                  "name": "owner",
+                  "value": "pto-spec"
+                },
+                {
+                  "name": "classification",
+                  "value": "arch/test"
+                },
+                {
+                  "name": "members",
+                  "value": "_Owner"
+                },
+                {
+                  "name": "pto_entity",
+                  "value": "state"
+                },
+                {
+                  "name": "scope",
+                  "value": "core"
+                }
+              ],
+              "name": "ndf"
+            }
+          ],
+          "facts": [
+            {
+              "label": "ID",
+              "value": "ndf://pto-spec/PTO-STATE-ARCH-OWNER"
+            },
+            {
+              "label": "Kind",
+              "value": "architecture"
+            },
+            {
+              "label": "Domain",
+              "value": "state"
+            },
+            {
+              "label": "Status",
+              "value": "active"
+            },
+            {
+              "label": "Owner",
+              "value": "pto-spec"
+            },
+            {
+              "label": "classification",
+              "value": "arch/test"
+            },
+            {
+              "label": "members",
+              "value": "_Owner"
+            },
+            {
+              "label": "pto_entity",
+              "value": "state"
+            },
+            {
+              "label": "scope",
+              "value": "core"
+            },
+            {
+              "label": "Trace",
+              "markdown": true,
+              "value": "- defined-in → [PTO-ARCH-OWNER](#node:scope:root:PTO-ARCH-OWNER \"<root>/owner.asl#L1\") owner.asl\n- ← depends-on [PTO-STATE-ARCH-DEPENDENCY](#node:scope:root:PTO-STATE-ARCH-DEPENDENCY \"<root>/dependency.asl#L2\") State Arch Dependency\n- ← owns-state [PTO-ARCH-OWNER](#node:scope:root:PTO-ARCH-OWNER \"<root>/owner.asl#L1\") owner.asl"
+            }
+          ],
+          "ndf": {
+            "attributes": {
+              "classification": "arch/test",
+              "members": "_Owner",
+              "pto_entity": "state",
+              "scope": "core"
+            },
+            "domain": "state",
+            "id": "ndf://pto-spec/PTO-STATE-ARCH-OWNER",
+            "kind": "architecture",
+            "owner": "pto-spec",
+            "status": "active"
+          },
+          "source": {
+            "file": "<root>/owner.asl",
+            "line": 2
+          },
+          "views": [
+            {
+              "id": "refines",
+              "label": "Refinement trace"
+            },
+            {
+              "id": "verifies",
+              "label": "Verification"
+            },
+            {
+              "id": "depends-on",
+              "label": "Dependencies"
+            }
+          ]
+        },
+        "ports": [
+          {
+            "direction": "in",
+            "id": "port:node:scope:root:PTO-STATE-ARCH-OWNER:in",
+            "name": "in"
+          },
+          {
+            "direction": "out",
+            "id": "port:node:scope:root:PTO-STATE-ARCH-OWNER:out",
+            "name": "out"
+          }
+        ],
+        "scope": "scope:root",
+        "type": "PTO-STATE-ARCH-OWNER"
+      },
+      {
+        "id": "node:scope:root:PTO-ARCH-DEPENDENCY",
+        "kind": "source",
+        "label": "dependency.asl",
+        "meta": {
+          "badges": [],
+          "definitionAnnotations": [
+            {
+              "name": "source"
+            },
+            {
+              "arguments": [
+                {
+                  "name": "id",
+                  "value": "PTO-ARCH-DEPENDENCY"
+                },
+                {
+                  "name": "domain",
+                  "value": "arch"
+                },
+                {
+                  "name": "status",
+                  "value": "active"
+                },
+                {
+                  "name": "owner",
+                  "value": "pto-spec"
+                },
+                {
+                  "name": "classification",
+                  "value": "test"
+                },
+                {
+                  "name": "pto_entity",
+                  "value": "unit"
+                },
+                {
+                  "name": "surface",
+                  "value": "arch"
+                }
+              ],
+              "name": "ndf"
+            }
+          ],
+          "external": true,
+          "facts": [
+            {
+              "label": "ID",
+              "value": "ndf://pto-spec/PTO-ARCH-DEPENDENCY"
+            },
+            {
+              "label": "Kind",
+              "value": "source"
+            },
+            {
+              "label": "Domain",
+              "value": "arch"
+            },
+            {
+              "label": "Status",
+              "value": "active"
+            },
+            {
+              "label": "Owner",
+              "value": "pto-spec"
+            },
+            {
+              "label": "classification",
+              "value": "test"
+            },
+            {
+              "label": "pto_entity",
+              "value": "unit"
+            },
+            {
+              "label": "surface",
+              "value": "arch"
+            },
+            {
+              "label": "File",
+              "markdown": true,
+              "value": "[`dependency.asl`](<root>/dependency.asl)"
+            },
+            {
+              "label": "Globals",
+              "markdown": true,
+              "value": "[`_Dependency`](<root>/dependency.asl#L3)"
+            },
+            {
+              "label": "Trace",
+              "markdown": true,
+              "value": "- depends-on → [PTO-ARCH-OWNER](#node:scope:root:PTO-ARCH-OWNER \"<root>/owner.asl#L1\") owner.asl\n- owns-state → [PTO-STATE-ARCH-DEPENDENCY](#node:scope:root:PTO-STATE-ARCH-DEPENDENCY \"<root>/dependency.asl#L2\") State Arch Dependency\n- ← defined-in [PTO-STATE-ARCH-DEPENDENCY](#node:scope:root:PTO-STATE-ARCH-DEPENDENCY \"<root>/dependency.asl#L2\") State Arch Dependency"
+            },
+            {
+              "label": "Document",
+              "value": "dependency"
+            }
+          ],
+          "instanceName": "dependency",
+          "ndf": {
+            "attributes": {
+              "classification": "test",
+              "pto_entity": "unit",
+              "surface": "arch"
+            },
+            "domain": "arch",
+            "id": "ndf://pto-spec/PTO-ARCH-DEPENDENCY",
+            "kind": "source",
+            "owner": "pto-spec",
+            "status": "active"
+          },
+          "networkInstance": true,
+          "open": {
+            "file": "<root>/dependency.asl"
+          },
+          "referencedEntityName": "dependency",
+          "referencedSource": {
+            "file": "<root>/dependency.asl",
+            "line": 1
+          },
+          "source": {
+            "file": "<root>/dependency.asl",
+            "line": 1
+          },
+          "views": [
+            {
+              "id": "refines",
+              "label": "Refinement trace"
+            },
+            {
+              "id": "verifies",
+              "label": "Verification"
+            },
+            {
+              "id": "depends-on",
+              "label": "Dependencies"
+            }
+          ]
+        },
+        "ports": [
+          {
+            "direction": "in",
+            "id": "port:node:scope:root:PTO-ARCH-DEPENDENCY:in",
+            "name": "in"
+          },
+          {
+            "direction": "out",
+            "id": "port:node:scope:root:PTO-ARCH-DEPENDENCY:out",
+            "name": "out"
+          }
+        ],
+        "scope": "scope:root",
+        "type": "PTO-ARCH-DEPENDENCY"
+      },
+      {
+        "id": "node:scope:root:PTO-STATE-ARCH-DEPENDENCY",
+        "kind": "architecture",
+        "label": "State Arch Dependency",
+        "meta": {
+          "badges": [],
+          "definitionAnnotations": [
+            {
+              "name": "architecture"
+            },
+            {
+              "arguments": [
+                {
+                  "name": "id",
+                  "value": "PTO-STATE-ARCH-DEPENDENCY"
+                },
+                {
+                  "name": "domain",
+                  "value": "state"
+                },
+                {
+                  "name": "status",
+                  "value": "active"
+                },
+                {
+                  "name": "owner",
+                  "value": "pto-spec"
+                },
+                {
+                  "name": "classification",
+                  "value": "arch/test"
+                },
+                {
+                  "name": "members",
+                  "value": "_Dependency"
+                },
+                {
+                  "name": "pto_entity",
+                  "value": "state"
+                },
+                {
+                  "name": "scope",
+                  "value": "core"
+                }
+              ],
+              "name": "ndf"
+            }
+          ],
+          "external": true,
+          "facts": [
+            {
+              "label": "ID",
+              "value": "ndf://pto-spec/PTO-STATE-ARCH-DEPENDENCY"
+            },
+            {
+              "label": "Kind",
+              "value": "architecture"
+            },
+            {
+              "label": "Domain",
+              "value": "state"
+            },
+            {
+              "label": "Status",
+              "value": "active"
+            },
+            {
+              "label": "Owner",
+              "value": "pto-spec"
+            },
+            {
+              "label": "classification",
+              "value": "arch/test"
+            },
+            {
+              "label": "members",
+              "value": "_Dependency"
+            },
+            {
+              "label": "pto_entity",
+              "value": "state"
+            },
+            {
+              "label": "scope",
+              "value": "core"
+            },
+            {
+              "label": "Trace",
+              "markdown": true,
+              "value": "- defined-in → [PTO-ARCH-DEPENDENCY](#node:scope:root:PTO-ARCH-DEPENDENCY \"<root>/dependency.asl#L1\") dependency.asl\n- depends-on → [PTO-STATE-ARCH-OWNER](#node:scope:root:PTO-STATE-ARCH-OWNER \"<root>/owner.asl#L2\") State Arch Owner\n- ← owns-state [PTO-ARCH-DEPENDENCY](#node:scope:root:PTO-ARCH-DEPENDENCY \"<root>/dependency.asl#L1\") dependency.asl"
+            },
+            {
+              "label": "Document",
+              "value": "dependency"
+            }
+          ],
+          "instanceName": "dependency",
+          "ndf": {
+            "attributes": {
+              "classification": "arch/test",
+              "members": "_Dependency",
+              "pto_entity": "state",
+              "scope": "core"
+            },
+            "domain": "state",
+            "id": "ndf://pto-spec/PTO-STATE-ARCH-DEPENDENCY",
+            "kind": "architecture",
+            "owner": "pto-spec",
+            "status": "active"
+          },
+          "networkInstance": true,
+          "referencedEntityName": "dependency",
+          "referencedSource": {
+            "file": "<root>/dependency.asl",
+            "line": 2
+          },
+          "source": {
+            "file": "<root>/dependency.asl",
+            "line": 2
+          },
+          "views": [
+            {
+              "id": "refines",
+              "label": "Refinement trace"
+            },
+            {
+              "id": "verifies",
+              "label": "Verification"
+            },
+            {
+              "id": "depends-on",
+              "label": "Dependencies"
+            }
+          ]
+        },
+        "ports": [
+          {
+            "direction": "in",
+            "id": "port:node:scope:root:PTO-STATE-ARCH-DEPENDENCY:in",
+            "name": "in"
+          },
+          {
+            "direction": "out",
+            "id": "port:node:scope:root:PTO-STATE-ARCH-DEPENDENCY:out",
+            "name": "out"
+          }
+        ],
+        "scope": "scope:root",
+        "type": "PTO-STATE-ARCH-DEPENDENCY"
+      }
+    ],
+    "subgraphs": []
+  },
+  "hierarchy": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [],
+            "detail": "cycle-a.asl",
+            "family": "source",
+            "label": "PTO-ARCH-CYCLE-A",
+            "nodeId": "node:scope:root:PTO-ARCH-CYCLE-A",
+            "path": [
+              "cycle-a",
+              "PTO-ARCH-CYCLE-A"
+            ],
+            "role": "node",
+            "sourceUri": "file://<root>/cycle-a.asl",
+            "workflowName": "PTO-ARCH-CYCLE-A"
+          }
+        ],
+        "detail": "cycle-a",
+        "nodeCount": 1,
+        "path": [
+          "cycle-a"
+        ],
+        "sourceUri": "file://<root>/cycle-a.asl",
+        "workflowName": "cycle-a"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "detail": "cycle-b.asl",
+            "family": "source",
+            "label": "PTO-ARCH-CYCLE-B",
+            "nodeId": "node:scope:root:PTO-ARCH-CYCLE-B",
+            "path": [
+              "cycle-b",
+              "PTO-ARCH-CYCLE-B"
+            ],
+            "role": "node",
+            "sourceUri": "file://<root>/cycle-b.asl",
+            "workflowName": "PTO-ARCH-CYCLE-B"
+          }
+        ],
+        "detail": "cycle-b",
+        "nodeCount": 1,
+        "path": [
+          "cycle-b"
+        ],
+        "sourceUri": "file://<root>/cycle-b.asl",
+        "workflowName": "cycle-b"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "detail": "dependency.asl",
+            "family": "source",
+            "label": "PTO-ARCH-DEPENDENCY",
+            "nodeId": "node:scope:root:PTO-ARCH-DEPENDENCY",
+            "path": [
+              "dependency",
+              "PTO-ARCH-DEPENDENCY"
+            ],
+            "role": "node",
+            "sourceUri": "file://<root>/dependency.asl",
+            "workflowName": "PTO-ARCH-DEPENDENCY"
+          },
+          {
+            "children": [],
+            "detail": "State Arch Dependency",
+            "family": "architecture",
+            "label": "PTO-STATE-ARCH-DEPENDENCY",
+            "nodeId": "node:scope:root:PTO-STATE-ARCH-DEPENDENCY",
+            "path": [
+              "dependency",
+              "PTO-STATE-ARCH-DEPENDENCY"
+            ],
+            "role": "node",
+            "sourceUri": "file://<root>/dependency.asl",
+            "workflowName": "PTO-STATE-ARCH-DEPENDENCY"
+          }
+        ],
+        "detail": "dependency",
+        "nodeCount": 2,
+        "path": [
+          "dependency"
+        ],
+        "sourceUri": "file://<root>/dependency.asl",
+        "workflowName": "dependency"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "detail": "owner.asl",
+            "family": "source",
+            "label": "PTO-ARCH-OWNER",
+            "nodeId": "node:scope:root:PTO-ARCH-OWNER",
+            "path": [
+              "owner",
+              "PTO-ARCH-OWNER"
+            ],
+            "role": "node",
+            "sourceUri": "file://<root>/owner.asl",
+            "workflowName": "PTO-ARCH-OWNER"
+          },
+          {
+            "children": [],
+            "detail": "State Arch Owner",
+            "family": "architecture",
+            "label": "PTO-STATE-ARCH-OWNER",
+            "nodeId": "node:scope:root:PTO-STATE-ARCH-OWNER",
+            "path": [
+              "owner",
+              "PTO-STATE-ARCH-OWNER"
+            ],
+            "role": "node",
+            "sourceUri": "file://<root>/owner.asl",
+            "workflowName": "PTO-STATE-ARCH-OWNER"
+          }
+        ],
+        "detail": "owner",
+        "nodeCount": 2,
+        "path": [
+          "owner"
+        ],
+        "sourceUri": "file://<root>/owner.asl",
+        "workflowName": "owner"
+      }
+    ],
+    "nodeCount": 4,
+    "path": [],
+    "sourceUri": "file://<root>/ndf.yaml",
+    "workflowName": "pto-spec"
+  },
+  "version": "1.0"
+}

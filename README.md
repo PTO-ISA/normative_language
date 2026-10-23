@@ -79,6 +79,65 @@ invalid watch contract, `NDF-XREF-002` a missing conformance target,
 `NDF-XREF-003` an undeclared graph namespace, and `NDF-XREF-004` a watched
 identity that has appeared.
 
+### Diagrams
+
+`ndf diagram` emits one unit of a project as the graph document a diagram
+consumer reads. The unit is a document by default, with its clauses as nodes
+and its typed edges as connections:
+
+```bash
+ndf diagram docs/pipeline.md --format graph
+ndf diagram ndf.yaml --format graph                       # the project: one node per document
+ndf diagram docs/pipeline.md --format graph --workflow PIPE-ISSUE-001 --view refines
+```
+
+`--group refinement` (or `domain`) puts the unit's clauses into one container
+per layer or domain; the default, `none`, draws them flat. Each clause carries
+badges for its modality, its layer and a status other than active, and a
+`facts` list with its canonical fields and body for a panel to show. A clause
+the document refers to but does not own is drawn once at its edge, external,
+and drills into the document that holds it; a target in a locked graph
+dependency is drawn as the clause it is, with its source in that checkout,
+and a target nothing resolves is a blackbox.
+
+`--workflow NAME` names the unit instead: the project (its id), a document
+(its id or title) or a clause (its id). `--view TYPE` draws a trace of the
+unit along one edge type (`refines`, `verifies`, `depends-on`) through the
+whole project, both ways, instead of its structure. The project overview,
+`ndf diagram ndf.yaml`, draws one node per document with the edges between
+documents added up by type. Every document carries the outline of the project
+(`hierarchy`: the project at the root, one child per document) and the views
+it offers (`meta.views`), so a consumer lists the documents and offers the
+traces without a second export.
+
+`--format graph` prints the bare document for a consumer such as the
+[Dialogram](https://github.com/endrix) `ndf-ide` shell, which parses stdout as
+is; `--format json` wraps it in the usual envelope. The command finds the
+project from the file, parses and validates it the way `check` does, and exits
+with status 2 only when the file is in no NDF project at all or names a unit
+the project does not have. A project that fails to load yields a partial
+document carrying the reason; a project that declares no dependencies needs no
+`ndf.lock` to be drawn.
+
+`ndf-sidecar`, built beside `ndf`, speaks the sidecar protocol a diagram
+consumer expects. Its queries are `getCapabilities`, `exportGraph` (with
+`args.group`, `args.workflow` and `args.view`), `listTaskTypes` (the clause
+kinds), `listWorkflowTypes`, `listWorkflowInstances` and `listInstanceNames`.
+Its mutations edit the text of the document that owns the file: `createNode`
+appends a clause of `type` titled `name` with an allocated id (`params.prefix`
+or `params.id` choose it; otherwise the prefix the document uses most), a
+`tbd` modality for a normative kind and `draft` status; `renameNode` retitles a
+heading; `deleteNode` removes a clause and is refused while any edge of the
+project targets it; `connect` and `deleteEdge` add and remove an entry of
+`role` (default `references`) in the source clause's metadata comment;
+`updateNodeParameter` sets a canonical or attribute field. A clause is named
+by its id or its title. Every mutation is computed on the text, re-parsed with
+the parser `check` uses, and refused with the file untouched when the result
+parses worse than the original (`invalid_result`); a mutation with
+`args.expectedRevision` is refused when the file changed
+(`concurrent_source_modification`). `getCapabilities` lists the edge types as
+`edgeRoles`, for a consumer that asks which type a connection should be.
+
 ## Documentation
 
 - [English specification](normative_language.md)
